@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    
+    <!-- Navbar -->
+    <nav class="bg-green-600 text-white p-4 shadow-md sticky top-0 left-0 right-0">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Plant Disease Detection</h1>
+            <div>
+                <a href="/" class="px-4 py-2 hover:bg-green-700 rounded">Home</a>
+                <a href="/info" class="px-4 py-2 hover:bg-green-700 rounded">Info</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg text-center">
+            
+            <h2 class="text-3xl font-bold text-green-600">Plant Disease Prediction</h2>
+            <p class="text-gray-600 mt-2">Upload an image to identify the disease.</p>
+            
+            <!-- File Upload Form -->
+            <form action="/" method="post" enctype="multipart/form-data" class="mt-6 space-y-4">
+                <label class="block">
+                    <span class="text-gray-700">Upload Image:</span>
+                    <input type="file" name="file" class="block w-full text-sm text-gray-700 border border-gray-300 rounded-lg p-2 cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                </label>
+                <button type="submit" class="w-full bg-green-500 text-white px-4 py-2 rounded-lg text-lg font-semibold hover:bg-green-700 transition">
+                    Predict
+                </button>
+            </form>
+
+            {% if prediction %}
+                <!-- Prediction Result -->
+                <div class="mt-6 bg-gray-50 p-4 rounded-lg shadow">
+                    <img src="{{ image }}" alt="Uploaded Image" class="w-full h-48 object-cover rounded">
+                    <p class="mt-4 text-lg font-semibold text-gray-800">Prediction: <span class="text-green-600">{{ prediction }}</span></p>
+                    <p class="text-gray-700">Confidence: {{ confidence }}%</p>
+                </div>
+            {% endif %}
+
+            <a href="/info" class="mt-6 inline-block text-blue-600 hover:underline">Learn more about Plant Diseases</a>
+        </div>
+    </div>
+
+</body>
+</html>
