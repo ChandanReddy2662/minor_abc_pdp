@@ -8,7 +8,7 @@ import gdown
 app = Flask(__name__)
 
 # URL from Google Drive (replace with your file's public link)
-url = "https://drive.google.com/uc?id=YOUR_FILE_ID"
+url = "https://drive.google.com/file/d/1tvZp8Ue4zMy_cmVEcwK8FOKs5ANFpDKX/view?usp=drive_link"
 output = "plant_disease_model_inception.h5"
 
 # Download only if model doesn't exist
