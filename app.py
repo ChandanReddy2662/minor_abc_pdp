@@ -13,7 +13,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # ✅ Correct Google Drive file ID
 file_id = "1tvZp8Ue4zMy_cmVEcwK8FOKs5ANFpDKX"
-model_path = "plant_disease_model_inception.h5"
+model_path = "plant_disease_model_inception1.h5"
 
 # ✅ Download model if it doesn't exist
 if not os.path.exists(model_path):
@@ -73,4 +73,5 @@ def info():
 
 # ✅ Run the Flask app
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=10000, debug=True)
+
